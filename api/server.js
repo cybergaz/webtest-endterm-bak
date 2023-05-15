@@ -28,7 +28,8 @@ app.use("/api/users", userRoutes);
 app.use("/api/auth", authRoutes);
 app.use("/api/tweets", tweetRoutes);
 
-app.listen(process.env.PORT, () => {
+const port = process.env.PORT || 8000;
+app.listen(port, () => {
   connect();
-  console.log("Listening to port " + process.env.PORT);
+  console.log("Listening to port : ${port}");
 });
